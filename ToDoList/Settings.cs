@@ -86,6 +86,14 @@ namespace ToDoList
         {
             Form1.foreColorCheck = textBox7.Text;
         }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                Form1.Mlg = true;
+            }
+        }
     }
 
 }

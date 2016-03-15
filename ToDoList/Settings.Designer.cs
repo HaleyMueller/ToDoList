@@ -57,8 +57,11 @@
             this.Tab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label17 = new System.Windows.Forms.Label();
             this.Tab.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
             // textBox1
@@ -339,6 +342,8 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.label17);
+            this.tabPage2.Controls.Add(this.checkBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 32);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
@@ -346,6 +351,26 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Default";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(379, 6);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(94, 27);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "Enabled";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(14, 4);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(95, 23);
+            this.label17.TabIndex = 1;
+            this.label17.Text = "MLG Mode:";
             // 
             // Settings
             // 
@@ -361,6 +386,8 @@
             this.Tab.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -395,5 +422,7 @@
         private System.Windows.Forms.TabControl Tab;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }

@@ -5,6 +5,8 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -21,6 +23,7 @@ namespace ToDoList
         public static string foreColor = "Gray";
         public static string foreColorCheck = "Blue";
         public static string backgroundColorCheck = "Red";
+        public static Boolean Mlg = false;
 
         public Form1()
         {
@@ -240,6 +243,42 @@ namespace ToDoList
             catch (Exception t)
             {
                 checkedListBox1.ForeColor = System.Drawing.Color.White;
+            }
+
+            if (Mlg)
+            {
+                // Add Background
+            }
+        }
+
+        private void whenClicked(object sender, EventArgs e)
+        {
+           
+            if (Mlg)
+            {
+                System.Reflection.Assembly thisExe;
+                thisExe = System.Reflection.Assembly.GetExecutingAssembly();
+                System.IO.Stream file =
+                    thisExe.GetManifestResourceStream("ToDoList.Hitmarker.wav");
+                System.IO.Stream file1 =
+                   thisExe.GetManifestResourceStream("ToDoList.HITMARKER.png");
+
+                Random random = new Random();
+                int randomNumberX = random.Next(0, this.Width);
+                int randomNumberY = random.Next(0, this.Height);
+                //Adds Sound
+                SoundPlayer simpleSound = new SoundPlayer(ToDoList.Properties.Resources.hitmarkerSound);
+                simpleSound.Play();
+                //Adds Image
+                this.Cursor = new Cursor(Cursor.Current.Handle);
+                int xCoordinate = randomNumberX;
+                int yCoordinate = randomNumberY;
+                PictureBox pic = new PictureBox();
+                pic.Image = Properties.Resources.hitmarkerImage; 
+                pic.Location = new Point(xCoordinate, yCoordinate);
+                pic.BringToFront();
+                this.Controls.Add(pic);
+                pic.BringToFront();
             }
         }
 

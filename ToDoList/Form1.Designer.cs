@@ -47,6 +47,7 @@
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(506, 592);
             this.checkedListBox1.TabIndex = 2;
+            this.checkedListBox1.Click += new System.EventHandler(this.whenClicked);
             this.checkedListBox1.SelectedIndexChanged += new System.EventHandler(this.checkedListBox1_SelectedIndexChanged);
             // 
             // button2
@@ -113,9 +114,11 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.checkedListBox1);
             this.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ToDo List - Mark Mueller";
             this.Activated += new System.EventHandler(this.Form2_FormActivated);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form_FormClosing);
