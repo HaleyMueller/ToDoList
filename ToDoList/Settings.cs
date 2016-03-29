@@ -31,6 +31,14 @@ namespace ToDoList
             textBox4.Text = "#";
             textBox5.Text = "#";
             textBox7.Text = "#";
+            if (Form1.Mlg)
+            {
+                checkBox1.Checked = true;
+            }
+            else
+            {
+                checkBox1.Checked = false;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -92,6 +100,10 @@ namespace ToDoList
             if (checkBox1.Checked)
             {
                 Form1.Mlg = true;
+            }
+            else
+            {
+                Form1.Mlg = false;
             }
         }
     }

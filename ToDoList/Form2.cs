@@ -35,5 +35,20 @@ namespace ToDoList
                 textBox1.Text = "* " + textBox1.Text;
             }
         }
+        private void Form2_KeyDown(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+
+            {
+                // Then Enter key was pressed
+                Console.WriteLine("Enter Was Pressed");
+                button1.PerformClick();
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(Form2_KeyDown);
+        }
     }
 }
